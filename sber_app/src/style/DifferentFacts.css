@@ -1,0 +1,76 @@
+.page_facts{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.panel{
+    z-index: 100; 
+    height: 185px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(53, 53, 53, 0.884);
+}
+
+.different_facts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 200px;
+}
+
+.all_facts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.name_facts{ 
+    text-align: center;
+    color: white;
+    font-size: 8vh;
+    font-family: Montserrat;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+}
+
+.menu{
+    margin-left: 1vw;
+    margin-top: 2vh;
+    cursor: pointer;
+    padding: 12px 20px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 12px;
+    background-color: transparent;
+    font-size: 1vw;
+    font-weight: 500;
+    font-family: Montserrat;
+    transition: all 0.3s ease;
+}
+
+.menu:hover {
+    background-color: white;
+    color: #6A00FF;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,187 @@
+.Menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50px);
+}
+
+
+.name_app{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    transform: translateY(-50px);
+}
+
+
+.home_text {
+    font-size: 5.5rem;
+    font-weight: 800;
+    margin-bottom: 100px;
+    background: linear-gradient(135deg, #6A00FF, #F1B2E0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    font-family: 'Montserrat'
+}
+
+.btn_main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 120px;
+}
+
+.closeButton{
+    padding:0;
+    border: none;
+    border-radius: 0px;
+    background-color: white;
+    cursor: pointer;
+    align-items: center;
+}
+
+.closeButtonIImage{
+    width: 3vw;
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 16px 32px;
+    margin-top: 20px;
+    background: transparent;
+    outline: none !important;
+    color: #6A00FF;
+    border: 2px solid #6A00FF;
+    border-style: solid !important;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: none !important;
+}
+
+.btn:hover {
+    color: #ffffff;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #9078FA, #D90C6C);
+    z-index: -2;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.btn:hover::after {
+    opacity: 1;
+}
+
+:focus-visible {
+    outline: 4px solid rgba(1, 90, 255, 0.925);
+    outline-offset: 2px;
+}
+
+
+.ModalWin{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 110;
+}
+
+.ModalWin.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.ModalCont{
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    width: 60vw;
+    height: 70vh;
+    background-color: white;
+    transform: scale(0.5);
+    transition: 0.4s all;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 200;
+}
+
+.ModalCont.active{
+    transform: scale(1);
+}
+
+.btnInModal{
+    font-size: 3.5vw;
+    width: 28vw;
+    height: 13vh;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-size: cover;
+}
+
+#btnInModal1{
+    background-color: #200549;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#btnInModal1:hover {
+    background-color: #3a0983;
+}
+
+#btnInModal2{
+    background-color: #200549;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#btnInModal2:hover {
+    background-color: #3a0983;
+}
+
+#btnInModal3{
+    background-color: #200549;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#btnInModal3:hover {
+    background-color: #3a0983;
+}
