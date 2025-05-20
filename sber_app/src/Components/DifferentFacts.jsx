@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import '../style/DifferentFacts.css';
-import data from '../data/facts';
+import full_data from '../data/full_facts';
 import Fact from './Fact';
 import { GenreContext } from '../hook/context';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ import { getCurrentFocusedElement, spatnavInstance, useSection } from '@salutejs
 
 const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, setReturnMenuState}) => { 
   const {genre} = useContext(GenreContext);
-  const dataGenreFacts = data[genre];
+  const dataGenreFacts = full_data[genre];
   const router = useNavigate();
 
   const themeNames = {
@@ -101,7 +101,7 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
         </h1>
         <div {...allFact} className='all_facts'>
           {dataGenreFacts.map((option, index) =>
-            <Fact reference={ref} assistant_global={assistant_global} scaleStatus={scale[index].status} setScale={setScale} key={option.id + 1} number={option.id + 1} fact={option.facts} answer={option.answer}/>
+            <Fact reference={ref} assistant_global={assistant_global} scaleStatus={scale[index].status} setScale={setScale} key={option.id + 1} number={option.id + 1} fact={option.fact}/>
           )}
         </div>
       </div>

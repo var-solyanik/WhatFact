@@ -33,7 +33,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 120px;
+    gap: 150px;
 }
 
 .closeButton{
@@ -52,7 +52,7 @@
 
 .btn{
     display: inline-block;
-    padding: 16px 32px;
+    padding: 20px 40px;
     margin-top: 20px;
     background: transparent;
     outline: none !important;
@@ -60,7 +60,7 @@
     border: 2px solid #6A00FF;
     border-style: solid !important;
     border-radius: 50px;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -184,4 +184,70 @@
 
 #btnInModal3:hover {
     background-color: #3a0983;
+}
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 1024px) {
+    .home_text {
+        font-size: 4rem;
+        margin-bottom: 80px;
+    }
+
+    .btn_main {
+        gap: 100px;
+    }
+
+    .btn {
+        padding: 18px 36px;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home_text {
+        font-size: 3rem;
+        margin-bottom: 60px;
+    }
+
+    .btn_main {
+        gap: 50px;
+    }
+
+    .btn {
+        padding: 16px 32px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home_text {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .btn_main {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .ModalCont {
+        width: 90vw;
+        height: 80vh;
+    }
+
+    .btnInModal {
+        font-size: 1.2rem;
+        width: 80%;
+        height: 10vh;
+    }
 }

@@ -49,9 +49,9 @@ const Fact = ({reference, assistant_global, scaleStatus, setScale, number, fact,
                     <p className='factsInScale'>{number}. {fact}</p>
                     <cite className='answerInScale'>{answer}</cite>
                 </blockfact>
-                <button id={number} className="sn-section-item closeButton" tabIndex={-1} onClick={() => assistant_global(null, "closeFactModal")}>
+                {/* <button id={number} className="sn-section-item closeButton" tabIndex={-1} onClick={() => assistant_global(null, "CloseModalFact")}>
                     <img className="closeButtonImage" src={closeButtonImage}/>
-                </button>
+                </button> */}
             </div> 
         </ModalWindow>
     </div>

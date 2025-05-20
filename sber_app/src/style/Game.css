@@ -76,3 +76,51 @@
     justify-content: space-around;
 }
 
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 1024px) {
+    .btn_answ,
+    .btnMenuAfterGame,
+    .check_answ,
+    .check_unAnsw {
+        width: 30%;
+        font-size: 1.4rem;
+        padding: 12px 16px;
+    }
+
+    .game_button {
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btn_answ,
+    .btnMenuAfterGame,
+    .check_answ,
+    .check_unAnsw {
+        width: 40%;
+        font-size: 1.2rem;
+        padding: 10px 14px;
+    }
+
+    .game_button {
+        height: 45vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .btn_answ,
+    .btnMenuAfterGame,
+    .check_answ,
+    .check_unAnsw {
+        width: 80%;
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    .game_button {
+        height: 40vh;
+        margin-top: 0.5vh;
+        margin-bottom: 1vh;
+    }
+}
+

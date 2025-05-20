@@ -56,17 +56,20 @@
 }
 
 .closeButton{
-    padding: 0;
+    padding: 10px 20px;
     border: none;
-    border-radius: 0px;
-    background-color: transparent;
+    border-radius: 12px;
+    background-color: #200549;
+    color: white;
     cursor: pointer;
-    align-items: center;
-    transition: transform 0.3s ease;
+    font-family: Montserrat;
+    font-size: 1.2vw;
+    transition: all 0.3s ease;
 }
 
 .closeButton:hover {
-    transform: scale(1.1);
+    background-color: #3a0983;
+    transform: scale(1.05);
 }
 
 .closeButtonImage{
