@@ -59,7 +59,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 12px;
-    background-color: #200549;
+    background-color: #ffffff;
     color: white;
     cursor: pointer;
     font-family: Montserrat;
@@ -68,7 +68,7 @@
 }
 
 .closeButton:hover {
-    background-color: #3a0983;
+    background-color: #ffffff;
     transform: scale(1.05);
 }
 
