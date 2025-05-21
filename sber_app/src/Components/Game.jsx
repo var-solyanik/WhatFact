@@ -123,7 +123,7 @@ const Game = ({res, setModalRes, assistant_global, menu, setMenu, answ, setAnsw,
             <h1 style={{
                 color: 'white',
                 fontFamily: 'Montserrat',
-                fontSize: '2.2vw',
+                fontSize: '3.2vw',
                 lineHeight: '3.5vh',
             }}>
                 Факт {currentQuestions + 1}/10:<pre></pre>

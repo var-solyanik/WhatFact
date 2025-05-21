@@ -99,7 +99,7 @@
     opacity: 1;
 }
 
-:focus-visible {
+.btn:focus-visible {
     outline: 4px solid rgba(1, 90, 255, 0.925);
     outline-offset: 2px;
 }
@@ -126,7 +126,7 @@
     pointer-events: all;
 }
 
-.ModalCont{
+.ModalCont {
     flex-direction: column;
     padding: 20px;
     border-radius: 12px;
@@ -137,16 +137,24 @@
     transition: 0.4s all;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     z-index: 200;
     position: relative;
 }
 
-.ModalCont.active{
+.ModalCont.active {
     transform: scale(1);
 }
 
-.btnInModal{
+.ModalCont h2 {
+    font-size: 2.5vw;
+    font-family: 'Montserrat';
+    margin-top: 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.btnInModal {
     font-size: 3.5vw;
     width: 28vw;
     height: 13vh;
@@ -155,6 +163,7 @@
     border-radius: 15px;
     cursor: pointer;
     background-size: cover;
+    transition: all 0.3s ease;
 }
 
 #btnInModal1{
@@ -202,8 +211,34 @@
     }
 
     .btn {
-        padding: 18px 36px;
+        padding: 15px 30px;
         font-size: 1.2rem;
+    }
+
+    .ModalCont {
+        width: 60vw;
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 60px;
+    }
+
+    .ModalCont h2 {
+        font-size: 1.8rem;
+        margin-top: 20px;
+        padding: 0 40px;
+    }
+
+    .btnInModal {
+        font-size: 1.8rem;
+        width: 70%;
+        height: 12vh;
+    }
+    .closeButtonIImage{
+        width: 3vw;
     }
 }
 
@@ -218,8 +253,42 @@
     }
 
     .btn {
-        padding: 16px 32px;
-        font-size: 1.1rem;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .ModalCont {
+        width: 75vw;
+        height: 70vh;
+        padding: 15px;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .ModalCont h2 {
+        font-size: 1.6rem;
+        margin-top: 15px;
+        padding: 0 30px;
+    }
+
+    .btnInModal {
+        font-size: 2rem;
+        width: 80%;
+        height: 15vh;
+        margin: 5px 0;
+    }
+
+    .closeButton {
+        top: 10px;
+        right: 10px;
+    }
+
+    .closeButtonIImage{
+        width: 3vw;
     }
 }
 
@@ -232,26 +301,54 @@
     .btn_main {
         flex-direction: column;
         gap: 20px;
-        align-items: center;
-        width: 100%;
     }
 
     .btn {
-        padding: 14px 28px;
-        font-size: 1rem;
-        width: 80%;
-        max-width: 300px;
-        margin: 0 auto;
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 
     .ModalCont {
-        width: 90vw;
-        height: 80vh;
+        width: 80vw;
+        height: 75vh;
+        padding: 10px;
+        padding-top: 40px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .ModalCont h2 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        padding: 0 20px;
+        text-align: center;
     }
 
     .btnInModal {
-        font-size: 1.2rem;
-        width: 80%;
-        height: 10vh;
+        font-size: 1.8rem;
+        width: 85%;
+        height: 18vh;
+        margin: 4px 0;
+        border-radius: 12px;
+    }
+
+    .closeButton {
+        top: 15px;
+        right: 15px;
+    }
+
+    .closeButtonIImage{
+        width: 6vw;
+    }
+    
+
+    h2 {
+        font-size: 1.5rem !important;
+        margin: 8px 0;
+        text-align: center;
     }
 }

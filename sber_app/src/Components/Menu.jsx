@@ -125,7 +125,7 @@ const Menu = ({assistant_global, state, setState, AssistantGenre, setAssistantGe
             <button className="sn-section-item btnInModal" id="btnInModal2" onClick={() => assistant_global("Животные", "chooseTheme")}>Животные</button>
             <button className="sn-section-item btnInModal" id="btnInModal3" onClick={() => assistant_global("Машины", "chooseTheme")}>Машины</button>
             <button className="sn-section-item closeButton" onClick={() => assistant_global(null, "closeModalForLearn")}>
-              <img className="closeButtonIImage" src={closeButtonImage} alt="Close"/>
+              <img className="sn-section-item closeButtonIImage" src={closeButtonImage} alt="Close"/>
             </button>
           </div>
         </ModalWindow>
@@ -136,7 +136,7 @@ const Menu = ({assistant_global, state, setState, AssistantGenre, setAssistantGe
             <button className="sn-section-item btnInModal" id="btnInModal2" onClick={() => assistant_global("Животные", "chooseTheme")}>Животные</button>
             <button className="sn-section-item btnInModal" id="btnInModal3" onClick={() => assistant_global("Машины", "chooseTheme")}>Машины</button>
             <button className="sn-section-item closeButton" onClick={() => assistant_global(null, "closeModalForLearn")}>
-              <img className="closeButtonIImage" src={closeButtonImage} alt="Close"/>
+              <img className="sn-section-item closeButtonIImage" src={closeButtonImage} alt="Close"/>
             </button>
           </div>  
         </ModalWindow>
