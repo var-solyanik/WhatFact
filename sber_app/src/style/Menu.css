@@ -26,7 +26,7 @@
     background-clip: text;
     color: transparent;
     text-transform: uppercase;
-    font-family: 'Montserrat'
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn_main{
@@ -39,7 +39,7 @@
 .closeButton{
     padding: 0;
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
     background-color: rgb(255, 255, 255);
     cursor: pointer;
     align-items: center;
@@ -61,7 +61,7 @@
     outline: none !important;
     color: #6A00FF;
     border: 2px solid #6A00FF;
-    border-style: solid !important;
+    /*border-style: solid !important;*/
     border-radius: 50px;
     font-size: 1.4rem;
     font-weight: 600;
@@ -148,7 +148,7 @@
 
 .ModalCont h2 {
     font-size: 2.5vw;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     margin-top: 40px;
     text-align: center;
     padding: 0 20px;
@@ -306,6 +306,7 @@
     .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
+        margin-inline: 50px;
     }
 
     .ModalCont {
