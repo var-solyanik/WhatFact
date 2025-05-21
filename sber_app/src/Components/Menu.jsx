@@ -24,18 +24,38 @@ const Menu = (
 	const [sectionProps, customize1] = useSection('allInteface', {
 		enterTo: 'default-element',
 		defaultElement: 'btnMenu',
+		navigation: {
+			'1': { next: '2', previous: '2' },
+			'2': { next: '1', previous: '1' }
+		}
 	});
 	const [sectionProps2, customize2] = useSection('btnForFact', {
 		enterTo: 'default-element',
 		defaultElement: 'btnInModal1',
+		navigation: {
+			'btnInModal1': { next: 'btnInModal2', previous: 'btnInModal3' },
+			'btnInModal2': { next: 'btnInModal3', previous: 'btnInModal1' },
+			'btnInModal3': { next: 'btnInModal1', previous: 'btnInModal2' },
+			'closeButton': { next: 'btnInModal1', previous: 'btnInModal3' }
+		}
 	});
 	const [sectionProps3, customize3] = useSection('btnMenu', {
 		enterTo: 'default-element',
 		defaultElement: '1',
+		navigation: {
+			'1': { next: '2', previous: '2' },
+			'2': { next: '1', previous: '1' }
+		}
 	});
 	const [sectionProps4, customize4] = useSection('btnForQuiz', {
 		enterTo: 'default-element',
 		defaultElement: 'btnInModal1',
+		navigation: {
+			'btnInModal1': { next: 'btnInModal2', previous: 'btnInModal3' },
+			'btnInModal2': { next: 'btnInModal3', previous: 'btnInModal1' },
+			'btnInModal3': { next: 'btnInModal1', previous: 'btnInModal2' },
+			'closeButton': { next: 'btnInModal1', previous: 'btnInModal3' }
+		}
 	});
 	
 	useEffect(() => {
@@ -60,6 +80,9 @@ const Menu = (
 			customize4({ //btnForQuiz
 				disabled: true,
 			});
+			customize1({ //allInterface
+				disabled: true,
+			});
 			spatnavInstance.focus('btnForFact');
 		} else {
 			customize2({ //btnForFact
@@ -69,6 +92,9 @@ const Menu = (
 				disabled: true,
 			});
 			customize3({ //btnMenu
+				disabled: false,
+			});
+			customize1({ //allInterface
 				disabled: false,
 			});
 			spatnavInstance.focus('btnMenu');
@@ -87,6 +113,9 @@ const Menu = (
 			customize4({ //btnForQuiz
 				disabled: false,
 			});
+			customize1({ //allInterface
+				disabled: true,
+			});
 			spatnavInstance.focus('btnForQuiz');
 		} else {
 			customize2({ //btnForFact
@@ -96,6 +125,9 @@ const Menu = (
 				disabled: true,
 			});
 			customize3({ //btnMenu
+				disabled: false,
+			});
+			customize1({ //allInterface
 				disabled: false,
 			});
 			spatnavInstance.focus('btnMenu');
