@@ -4,20 +4,30 @@ import ModalWindow from "./ModalWindow";
 import { useNavigate } from "react-router-dom";
 import { GenreContext } from "../hook/context";
 import closeButtonImage from "../jpg/closeButton2.png";
-import {getCurrentFocusedElement, spatnavInstance, useSection } from "@salutejs/spatial";
+import { getCurrentFocusedElement, spatnavInstance, useSection } from "@salutejs/spatial";
 
-
-const  Menu = ({assistant_global, state, setState, AssistantGenre, setAssistantGenre, modalQuiz, setModalQuiz}) => {
+const Menu = ({assistant_global, state, setState, AssistantGenre, setAssistantGenre, modalQuiz, setModalQuiz}) => {
     const router = useNavigate();
     const [modalActive1, setModalActive1] = useState(false);
     const [modalActive2, setModalActive2] = useState(false);
     const {genre, setGenre} = useContext(GenreContext);
 
-
-    const [sectionProps, customize1] = useSection('allInteface');
-    const [sectionProps2, customize2] = useSection('btnForFact');
-    const [sectionProps3, customize3] = useSection('btnMenu');
-    const [sectionProps4, customize4] = useSection('btnForQuiz');
+    const [sectionProps, customize1] = useSection('allInteface', {
+        enterTo: 'default-element',
+        defaultElement: 'btnMenu'
+    });
+    const [sectionProps2, customize2] = useSection('btnForFact', {
+        enterTo: 'default-element',
+        defaultElement: 'btnInModal1'
+    });
+    const [sectionProps3, customize3] = useSection('btnMenu', {
+        enterTo: 'default-element',
+        defaultElement: '1'
+    });
+    const [sectionProps4, customize4] = useSection('btnForQuiz', {
+        enterTo: 'default-element',
+        defaultElement: 'btnInModal1'
+    });
 
     useEffect(() => {
       const intervalId = setInterval(() => {
@@ -29,63 +39,59 @@ const  Menu = ({assistant_global, state, setState, AssistantGenre, setAssistantG
       return () => clearInterval(intervalId);
     }, []);
 
-    
-
     useEffect(() => {
       setModalActive1(state);
       if(state){
         customize3({ //btnMenu
-          disabled:true,
-        })
+          disabled: true,
+        });
         customize2({ //btnForFact
-          disabled:false,
-        })
+          disabled: false,
+        });
         customize4({ //btnForQuiz
-          disabled:true,
-        })
+          disabled: true,
+        });
         spatnavInstance.focus('btnForFact');
-      }
-      else{
+      } else {
         customize2({ //btnForFact
-          disabled:true, 
-        })
+          disabled: true, 
+        });
         customize4({ //btnForQuiz
-          disabled:true,
-        })
+          disabled: true,
+        });
         customize3({ //btnMenu
-          disabled:false,
-        })
+          disabled: false,
+        });
         spatnavInstance.focus('btnMenu');
       }
-    }, [state])
+    }, [state]);
 
     useEffect(() => {
       setModalActive2(modalQuiz);
       if(modalQuiz){
         customize3({ //btnMenu
-          disabled:true,
-        })
+          disabled: true,
+        });
         customize2({ //btnForFact
-          disabled:true,
-        })
+          disabled: true,
+        });
         customize4({ //btnForQuiz
-          disabled:false,
-        })
+          disabled: false,
+        });
         spatnavInstance.focus('btnForQuiz');
-      }
-      else{
+      } else {
         customize2({ //btnForFact
-          disabled:true,
-        })
+          disabled: true,
+        });
         customize4({ //btnForQuiz
-          disabled:true,
-        })
+          disabled: true,
+        });
         customize3({ //btnMenu
-          disabled:false,
-        })
+          disabled: false,
+        });
         spatnavInstance.focus('btnMenu');
       }
-    }, [modalQuiz])
+    }, [modalQuiz]);
 
     useEffect(() =>{
       setGenre(AssistantGenre);
@@ -109,28 +115,28 @@ const  Menu = ({assistant_global, state, setState, AssistantGenre, setAssistantG
       <div {...sectionProps} className="sn-section-root Menu">
         <p className="home_text">WHAT FACT</p>
         <div {...sectionProps3} className="btn_main">
-          <button className="sn-section-item btn" id="1" tabIndex={-1}  onClick={() => assistant_global(null, "learnFacts")}>Узнать факты</button>
-          <button className="sn-section-item btn" id="2" tabIndex={-1}  onClick={() => assistant_global(null, "attemptToQuiz")}>Пройти тест</button>
+          <button className="sn-section-item btn" id="1" onClick={() => assistant_global(null, "learnFacts")}>Узнать факты</button>
+          <button className="sn-section-item btn" id="2" onClick={() => assistant_global(null, "attemptToQuiz")}>Пройти тест</button>
         </div>
         <ModalWindow assistant_global={assistant_global} active={modalActive1} setActive={setModalActive1} setModalState={setState}>
           <div {...sectionProps2} style={{height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}>
             <h2 style={{fontSize: '2.5vw', fontFamily: 'Montserrat'}}>Выберите тему фактов:</h2>
-            <button className="sn-section-item btnInModal" tabIndex={-1} id="btnInModal1" onClick={() => assistant_global("Страны", "chooseTheme")}>Страны</button>
-            <button className="sn-section-item btnInModal" tabIndex={-1} id="btnInModal2" onClick={() => assistant_global("Животные", "chooseTheme")}>Животные</button>
-            <button className="sn-section-item btnInModal" tabIndex={-1} id="btnInModal3" onClick={() => assistant_global("Машины", "chooseTheme")}>Машины</button>
-            <button className="sn-section-item closeButton" tabIndex={-1} onClick={() => assistant_global(null, "closeModalForLearn")}>
-              <img className="closeButtonIImage" src={closeButtonImage}/>
+            <button className="sn-section-item btnInModal" id="btnInModal1" onClick={() => assistant_global("Страны", "chooseTheme")}>Страны</button>
+            <button className="sn-section-item btnInModal" id="btnInModal2" onClick={() => assistant_global("Животные", "chooseTheme")}>Животные</button>
+            <button className="sn-section-item btnInModal" id="btnInModal3" onClick={() => assistant_global("Машины", "chooseTheme")}>Машины</button>
+            <button className="sn-section-item closeButton" onClick={() => assistant_global(null, "closeModalForLearn")}>
+              <img className="closeButtonIImage" src={closeButtonImage} alt="Close"/>
             </button>
           </div>
         </ModalWindow>
         <ModalWindow assistant_global={assistant_global} active={modalActive2} setActive={setModalActive2} setModalState={setModalQuiz}>
           <div {...sectionProps4} style={{height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}>
             <h2 style={{fontSize: '2.5vw', fontFamily: 'Montserrat'}}>Выберите тему фактов:</h2>
-            <button className="sn-section-item btnInModal" tabIndex={-1} id="btnInModal1" onClick={() => assistant_global("Страны", "chooseTheme")}>Страны</button>
-            <button className="sn-section-item btnInModal" tabIndex={-1} id="btnInModal2" onClick={() => assistant_global("Животные", "chooseTheme")}>Животные</button>
-            <button className="sn-section-item btnInModal" tabIndex={-1} id="btnInModal3" onClick={() => assistant_global("Машины", "chooseTheme")}>Машины</button>
-            <button className="sn-section-item closeButton" tabIndex={-1} onClick={() => assistant_global(null, "closeModalForLearn")}>
-              <img className="closeButtonIImage" src={closeButtonImage}/>
+            <button className="sn-section-item btnInModal" id="btnInModal1" onClick={() => assistant_global("Страны", "chooseTheme")}>Страны</button>
+            <button className="sn-section-item btnInModal" id="btnInModal2" onClick={() => assistant_global("Животные", "chooseTheme")}>Животные</button>
+            <button className="sn-section-item btnInModal" id="btnInModal3" onClick={() => assistant_global("Машины", "chooseTheme")}>Машины</button>
+            <button className="sn-section-item closeButton" onClick={() => assistant_global(null, "closeModalForLearn")}>
+              <img className="closeButtonIImage" src={closeButtonImage} alt="Close"/>
             </button>
           </div>  
         </ModalWindow>

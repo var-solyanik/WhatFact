@@ -6,7 +6,6 @@ import { GenreContext } from '../hook/context';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentFocusedElement, spatnavInstance, useSection } from '@salutejs/spatial';
 
-
 const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, setReturnMenuState}) => { 
   const {genre} = useContext(GenreContext);
   const dataGenreFacts = full_data[genre];
@@ -18,19 +17,26 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
     'cars': 'Машины'
   };
 
-  const [menuFocus, customizeMenu] = useSection('PageFacts');
-  const [returnMenu, customizeReturnMenu] = useSection("returnMenu");
-  const [allFact, customizeAllFact] = useSection('AllFact');
+  const [menuFocus, customizeMenu] = useSection('PageFacts', {
+    enterTo: 'default-element',
+    defaultElement: 'returnMenu'
+  });
+  const [returnMenu, customizeReturnMenu] = useSection("returnMenu", {
+    enterTo: 'default-element',
+    defaultElement: '0'
+  });
+  const [allFact, customizeAllFact] = useSection('AllFact', {
+    enterTo: 'default-element',
+    defaultElement: '1'
+  });
   const ref = useRef(null);
-
 
   useEffect(() => {
     spatnavInstance.focus('returnMenu');
-  },[])
-
+  }, []);
   
-  useEffect(() =>{
-    const result = scale.filter((temp) => temp.status !== false)
+  useEffect(() => {
+    const result = scale.filter((temp) => temp.status !== false);
     if(result.length !== 0){
       customizeAllFact({
         disabled: true,
@@ -38,8 +44,7 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
       customizeReturnMenu({
         disabled: true,
       });
-    }
-    else{
+    } else {
       customizeAllFact({
         disabled: false,
       });
@@ -47,17 +52,17 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
         disabled: false,
       });
     }
-  }, [scale])
+  }, [scale]);
 
-  useEffect(()=>{
-    const handleKeyDown = ((event) => {
-      const focusedReturnMenu = getCurrentFocusedElement()
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      const focusedReturnMenu = getCurrentFocusedElement();
       switch (event.code) {
         case 'ArrowDown':
           if(focusedReturnMenu.id !== '1'){
             event.preventDefault();
             ref.current = focusedReturnMenu;
-            ref.current.scrollIntoView({ behavior: 'smooth',  block: 'center'});       
+            ref.current.scrollIntoView({ behavior: 'smooth', block: 'center'});       
             break;
           }
         case 'ArrowUp':
@@ -66,21 +71,10 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
           ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
           break;
       }
-    });
+    };
     window.addEventListener('keydown', handleKeyDown);
 
-    // Удаляем обработчик при размонтировании компонента
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [])
-
-  useEffect(() => {   
-    const intervalId = setInterval(() => { 
-      const focusedElement = getCurrentFocusedElement();
-      console.log("Focused element:", focusedElement);
-    }, 5000); // 5000 миллисекунд = 5 секунд
-
-    // Очистка интервала при размонтировании компонента
-    return () => clearInterval(intervalId);
   }, []);
 
   useEffect(() => {
@@ -93,7 +87,7 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
   return (
     <div {...menuFocus} className='sn-section-root page_facts'>
       <div {...returnMenu}>
-        <button id='0' onClick={() => assistant_global(null, "returnMenu")} className='sn-section-item menu' tabIndex={-1}>Главное меню</button>
+        <button id='0' onClick={() => assistant_global(null, "returnMenu")} className='sn-section-item menu'>Главное меню</button>
       </div>
       <div className="different_facts">
         <h1 className='name_facts'>
@@ -101,14 +95,22 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
         </h1>
         <div {...allFact} className='all_facts'>
           {dataGenreFacts.map((option, index) =>
-            <Fact reference={ref} assistant_global={assistant_global} scaleStatus={scale[index].status} setScale={setScale} key={option.id + 1} number={option.id + 1} fact={option.fact}/>
+            <Fact 
+              reference={ref} 
+              assistant_global={assistant_global} 
+              scaleStatus={scale[index].status} 
+              setScale={setScale} 
+              key={option.id + 1} 
+              number={option.id + 1} 
+              fact={option.fact}
+            />
           )}
         </div>
       </div>
       <div style={{height:'170px'}}></div>
       <div className='panel'></div>
     </div>    
-  )
-}
+  );
+};
 
 export default DifferentFacts;
