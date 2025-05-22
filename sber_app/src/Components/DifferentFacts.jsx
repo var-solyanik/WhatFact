@@ -116,8 +116,6 @@ const DifferentFacts = (
 					)}
 				</div>
 			</div>
-			<div style={{ height: '170px' }}></div>
-			<div className="panel"></div>
 		</div>
 	);
 };
