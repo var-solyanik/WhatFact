@@ -61,6 +61,7 @@
     outline: none !important;
     color: #6A00FF;
     border: 2px solid #6A00FF;
+    /*border-style: solid !important;*/
     border-radius: 50px;
     font-size: 1.4rem;
     font-weight: 600;
@@ -80,12 +81,6 @@
     box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
 }
 
-.btn:focus-visible {
-    outline: 4px solid rgba(106, 0, 255, 0.5);
-    outline-offset: 4px;
-    box-shadow: 0 0 0 4px rgba(106, 0, 255, 0.3);
-    transform: scale(1.05);
-}
 
 .btn::after {
     content: '';
@@ -103,6 +98,12 @@
 .btn:hover::after {
     opacity: 1;
 }
+
+.btn:focus-visible {
+    outline: 4px solid rgba(1, 90, 255, 0.925);
+    outline-offset: 2px;
+}
+
 
 .ModalWin{
     height: 100vh;
@@ -214,11 +215,6 @@
         font-size: 1.2rem;
     }
 
-    .btn:focus-visible {
-        outline-width: 3px;
-        outline-offset: 3px;
-    }
-
     .ModalCont {
         width: 60vw;
         height: 65vh;
@@ -259,11 +255,6 @@
     .btn {
         padding: 12px 25px;
         font-size: 1rem;
-    }
-
-    .btn:focus-visible {
-        outline-width: 2px;
-        outline-offset: 2px;
     }
 
     .ModalCont {
@@ -316,11 +307,6 @@
         padding: 10px 20px;
         font-size: 0.9rem;
         margin-inline: 50px;
-    }
-
-    .btn:focus-visible {
-        outline-width: 2px;
-        outline-offset: 2px;
     }
 
     .ModalCont {
