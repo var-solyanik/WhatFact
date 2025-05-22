@@ -18,11 +18,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    /*justify-content: space-around;*/
-    gap: 20px;
-    /*height: 55vh;*/
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    justify-content: space-around;
+    height: 55vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
 }
 
 .btn_answ{
@@ -32,44 +31,42 @@
     border-radius: 12px;
     border: none;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     width: 20%;
 }
 
 .btnMenuAfterGame{
     padding: 15px 20px;
     font-size: 1.8vw;
-    margin-top: 0;
+    margin-top: 0px;
     border-radius: 12px;
     border: none;
     cursor: pointer;
     background-color: #3a0983;
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     width: 20%;
 }
 
 .check_answ{
     padding: 15px 20px;
     font-size: 1.8vw;
-    margin-top: 0;
+    margin-top: 0px;
     border-radius: 12px;
     border: none;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     width: 20%;
-    /*background: linear-gradient(180deg, #5a28ac, #a1067e); !* Градиент от тёмно-синего к ещё более тёмному *!*/
-
 }
 
 .check_unAnsw{
     padding: 15px 20px;
     font-size: 1.8vw;
     margin-bottom: 3vh;
-    margin-top: 0;
+    margin-top: 0px;
     border-radius: 12px;
     border: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     width: 20%;
 }
 
@@ -77,7 +74,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 /* Медиа-запросы для адаптивности */
@@ -91,9 +87,9 @@
         padding: 12px 16px;
     }
 
-    /*.game_button {*/
-    /*    height: 50vh;*/
-    /*}*/
+    .game_button {
+        height: 50vh;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -106,9 +102,9 @@
         padding: 10px 14px;
     }
 
-    /*.game_button {*/
-    /*    height: 45vh;*/
-    /*}*/
+    .game_button {
+        height: 45vh;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -121,10 +117,10 @@
         padding: 8px 12px;
     }
 
-    /*.game_button {*/
-    /*    height: 40vh;*/
-    /*    margin-top: 0.5vh;*/
-    /*    margin-bottom: 1vh;*/
-    /*}*/
+    .game_button {
+        height: 40vh;
+        margin-top: 0.5vh;
+        margin-bottom: 1vh;
+    }
 }
 

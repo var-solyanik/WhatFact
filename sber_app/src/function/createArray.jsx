@@ -1,7 +1,8 @@
+import React, { useContext } from "react";
 import data from '../data/facts';
 
 
-export const ArrayQuestionsFacts = (genreType) => {
+export const ArrayQuestionsFacts = (genreType) => { 
     const genre = genreType;
     const arrayWithNumberFacts = randomlyInitializeArray(0,29).slice(0,10);
     var targetArray = new Array(10)
@@ -12,8 +13,8 @@ export const ArrayQuestionsFacts = (genreType) => {
             var positionValidAnswer = Math.floor(Math.random() * 4);
             factsNumber[positionValidAnswer] = arrayWithNumberFacts[i]
             const question = {
-                Fact: data[genre][arrayWithNumberFacts[i]].facts,
-                Answer: [
+                Fact: data[genre][arrayWithNumberFacts[i]].facts, 
+                Answer: [ 
                          data[genre][factsNumber[0]] && data[genre][factsNumber[0]].answer,
                          data[genre][factsNumber[1]] && data[genre][factsNumber[1]].answer,
                          data[genre][factsNumber[2]] && data[genre][factsNumber[2]].answer,
@@ -26,7 +27,7 @@ export const ArrayQuestionsFacts = (genreType) => {
         else{
             const positionValidAnswer = factsNumber.indexOf(arrayWithNumberFacts[i]);
             const question = {
-                Fact: data[genre][arrayWithNumberFacts[i]].facts,
+                Fact: data[genre][arrayWithNumberFacts[i]].facts, 
                 Answer: [
                          data[genre][factsNumber[0]] && data[genre][factsNumber[0]].answer,
                          data[genre][factsNumber[1]] && data[genre][factsNumber[1]].answer,

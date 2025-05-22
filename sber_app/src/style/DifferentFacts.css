@@ -35,7 +35,8 @@
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 20px 20px 200px;
+    padding: 20px;
+    padding-bottom: 200px;
     box-sizing: border-box;
 }
 
@@ -53,7 +54,7 @@
     text-align: center;
     color: white;
     font-size: 8vh;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     margin: 20px 0;
@@ -72,7 +73,7 @@
     background-color: transparent;
     font-size: 1vw;
     font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     transition: all 0.3s ease;
 }
 
@@ -94,7 +95,8 @@
     }
 
     .different_facts {
-        padding: 15px 15px 180px;
+        padding: 15px;
+        padding-bottom: 180px;
     }
 }
 
@@ -109,7 +111,8 @@
     }
 
     .different_facts {
-        padding: 10px 10px 160px;
+        padding: 10px;
+        padding-bottom: 160px;
     }
 
     .all_facts {
@@ -131,7 +134,8 @@
     }
 
     .different_facts {
-        padding: 8px 8px 140px;
+        padding: 8px;
+        padding-bottom: 140px;
     }
 
     .all_facts {
