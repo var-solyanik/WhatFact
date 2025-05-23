@@ -100,10 +100,18 @@
 }
 
 .btn:focus-visible {
-    outline: 4px solid rgba(1, 90, 255, 0.925);
-    outline-offset: 2px;
+    outline: 4px solid #6A00FF;
+    outline-offset: 4px;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(106, 0, 255, 0.3);
 }
 
+.btn.sn-section-item:focus {
+    outline: 4px solid #6A00FF;
+    outline-offset: 4px;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(106, 0, 255, 0.3);
+}
 
 .ModalWin{
     height: 100vh;
