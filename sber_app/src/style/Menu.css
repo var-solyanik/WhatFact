@@ -135,11 +135,11 @@
 }
 
 .ModalCont {
+    display: flex;
     flex-direction: column;
+    gap: 20px;
     padding: 20px;
-    border-radius: 12px;
-    width: 60vw;
-    height: 70vh;
+    border-radius: 24px;
     background-color: white;
     transform: scale(0.5);
     transition: 0.4s all;
@@ -154,6 +154,17 @@
     transform: scale(1);
 }
 
+.modalContentDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 24px;
+    background-color: white;
+}
+
+
+
 .ModalCont h2 {
     font-size: 2.5vw;
     font-family: 'Montserrat', sans-serif;
@@ -163,9 +174,12 @@
 }
 
 .btnInModal {
-    font-size: 3.5vw;
-    width: 28vw;
-    height: 13vh;
+    font-size: 2rem;
+    width: auto;
+    min-width: 80%;
+    padding: 10px 20px;
+    /* width: 28vw;
+    height: 13vh; */
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 15px;
@@ -223,7 +237,7 @@
         font-size: 1.2rem;
     }
 
-    .ModalCont {
+    /* .ModalCont {
         width: 60vw;
         height: 65vh;
         display: flex;
@@ -238,12 +252,11 @@
         font-size: 1.8rem;
         margin-top: 20px;
         padding: 0 40px;
-    }
+    } */
 
     .btnInModal {
         font-size: 1.8rem;
-        width: 70%;
-        height: 12vh;
+        width: 100%;
     }
     .closeButtonIImage{
         width: 3vw;
@@ -265,7 +278,7 @@
         font-size: 1rem;
     }
 
-    .ModalCont {
+    /* .ModalCont {
         width: 75vw;
         height: 70vh;
         padding: 15px;
@@ -288,6 +301,13 @@
         width: 80%;
         height: 15vh;
         margin: 5px 0;
+    } */
+
+    .modalContentDivH2 {
+        font-size: 1.75rem !important;
+        margin-top: 10px;
+        padding: 0px !important;
+        text-align: center;
     }
 
     .closeButton {
@@ -319,7 +339,7 @@
 
     .ModalCont {
         width: 80vw;
-        height: 75vh;
+        /* height: 75vh;
         padding: 10px;
         padding-top: 40px;
         border-radius: 8px;
@@ -327,23 +347,24 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 12px;
+        gap: 12px; */
     }
 
-    .ModalCont h2 {
-        font-size: 1.5rem;
+    .modalContentDivH2 {
+        font-size: 1.5rem !important;
         margin-top: 10px;
-        padding: 0 20px;
+        padding: 0px !important;
         text-align: center;
     }
+   
 
-    .btnInModal {
+    /* .btnInModal {
         font-size: 1.8rem;
         width: 85%;
         height: 18vh;
         margin: 4px 0;
         border-radius: 12px;
-    }
+    } */
 
     .closeButton {
         top: 15px;

@@ -19,3 +19,22 @@
     align-items: center;
     justify-content: center;
 }
+
+.divModalRes h1 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 768px) {
+    .divModalRes h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .divModalRes h1 {
+        font-size: 1.2rem;
+    }
+}

@@ -120,12 +120,7 @@ const Game = ({res, setModalRes, assistant_global, menu, setMenu, answ, setAnsw,
 
     return (
         <div {...allButtonSection} className='game_menu'>
-            <h1 style={{
-                color: 'white',
-                fontFamily: 'Montserrat',
-                fontSize: '2.5vw',
-                lineHeight: '3.2vh',
-            }}>
+            <h1 className="question-text">
                 Факт {currentQuestions + 1}/10:<pre></pre>
                {isLengthZero() 
                     ? <div>Привет</div>

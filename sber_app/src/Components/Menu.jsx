@@ -119,8 +119,8 @@ const Menu = ({assistant_global, state, setState, AssistantGenre, setAssistantGe
           <button className="sn-section-item btn" id="2" onClick={() => assistant_global(null, "attemptToQuiz")}>Пройти тест</button>
         </div>
         <ModalWindow assistant_global={assistant_global} active={modalActive1} setActive={setModalActive1} setModalState={setState}>
-          <div {...sectionProps2} style={{height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}>
-            <h2 style={{fontSize: '2.5vw', fontFamily: 'Montserrat'}}>Выберите тему фактов:</h2>
+          <div {...sectionProps2} className="modalContentDiv" style={{height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}>
+            <h2 className="modalContentDivH2">Выберите тему фактов:</h2>
             <button className="sn-section-item btnInModal" id="btnInModal1" onClick={() => assistant_global("Страны", "chooseTheme")}>Страны</button>
             <button className="sn-section-item btnInModal" id="btnInModal2" onClick={() => assistant_global("Животные", "chooseTheme")}>Животные</button>
             <button className="sn-section-item btnInModal" id="btnInModal3" onClick={() => assistant_global("Машины", "chooseTheme")}>Машины</button>
@@ -130,8 +130,8 @@ const Menu = ({assistant_global, state, setState, AssistantGenre, setAssistantGe
           </div>
         </ModalWindow>
         <ModalWindow assistant_global={assistant_global} active={modalActive2} setActive={setModalActive2} setModalState={setModalQuiz}>
-          <div {...sectionProps4} style={{height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}>
-            <h2 style={{fontSize: '2.5vw', fontFamily: 'Montserrat'}}>Выберите тему фактов:</h2>
+          <div {...sectionProps4} className="modalContentDiv" style={{height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}>
+            <h2 className="modalContentDivH2">Выберите тему фактов:</h2>
             <button className="sn-section-item btnInModal" id="btnInModal1" onClick={() => assistant_global("Страны", "chooseTheme")}>Страны</button>
             <button className="sn-section-item btnInModal" id="btnInModal2" onClick={() => assistant_global("Животные", "chooseTheme")}>Животные</button>
             <button className="sn-section-item btnInModal" id="btnInModal3" onClick={() => assistant_global("Машины", "chooseTheme")}>Машины</button>

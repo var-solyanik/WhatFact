@@ -80,6 +80,14 @@
 
 }
 
+.question-text {
+    color: white;
+    font-family: Montserrat;
+    font-size: 3.5vw;
+    line-height: 4.5vh;
+    margin-bottom: 2vh;
+}
+
 /* Медиа-запросы для адаптивности */
 @media screen and (max-width: 1024px) {
     .btn_answ,
@@ -109,6 +117,11 @@
     /*.game_button {*/
     /*    height: 45vh;*/
     /*}*/
+
+    .question-text {
+        font-size: 4.5vw;
+        line-height: 5.5vh;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -117,7 +130,7 @@
     .check_answ,
     .check_unAnsw {
         width: 80%;
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding: 8px 12px;
     }
 
