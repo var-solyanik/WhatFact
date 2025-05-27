@@ -158,7 +158,10 @@ const Menu = (
       <p className="home_text">WHAT FACT</p>
       <div {...sectionProps3} className="btn_main">
         <button className="sn-section-item btn" id="1"
-                onClick={() => assistant_global(null, 'learn_facts')}>Узнать факты
+                onClick={() => {
+                  console.log("Кнопка 'Узнать факты' была кликнута!"); // ОЧЕНЬ ВАЖНЫЙ ЛОГ
+                  assistant_global(null, 'learnFacts');
+                }}>Узнать факты
         </button>
         <button className="sn-section-item btn" id="2"
                 onClick={() => assistant_global(null, 'attemptToQuiz')}>Пройти тест

@@ -42,7 +42,10 @@ function App() {
   const assistantStateRef = useRef();
   const assistantRef = useRef();
 
+  console.log('App component is rendering/re-rendering.'); // Этот лог будет срабатывать при каждом рендере
+
   useEffect(() => {
+    console.log('App useEffect: Initializing assistant.'); // Этот лог будет срабатывать только при монтировании
     assistantRef.current = initialize(() => assistantStateRef.current);
     assistantRef.current.on("data", (action) => {
       handleAssistantDataEvent(action)
@@ -50,6 +53,7 @@ function App() {
     assistantRef.current.on("command", (event) => {
       dispatchAssistantAction(event?.command);
     })
+    console.log('App useEffect cleanup: Assistant is being unmounted.'); // Этот лог будет срабатывать при размонтировании
   }, [])
 
   const handleAssistantDataEventSmartAppData = (event) => {
@@ -229,15 +233,26 @@ function App() {
   }
 
   function assistant_global(n, state) {
-    console.log(n, state)
-    assistantRef.current.sendData({
-      action: {
-        action_id: state,
-        parameters: {
-          number: n
-        }
+    console.log('Calling assistant_global with:', n, state);
+    console.log('assistantRef.current BEFORE sendData:', assistantRef.current); // <--- Make sure this shows the assistant object, not null/undefined
+
+    if (assistantRef.current) {
+      try {
+        assistantRef.current.sendData({
+          action: {
+            action_id: state,
+            parameters: {
+              number: n
+            }
+          }
+        });
+        console.log('assistantRef.current.sendData() was invoked.'); // <--- Add this log
+      } catch (e) {
+        console.error('ERROR: Calling sendData() failed:', e); // <--- Add this error log
       }
-    })
+    } else {
+      console.error('ERROR: assistantRef.current is null/undefined! Cannot send data.');
+    }
   }
 
   return (
