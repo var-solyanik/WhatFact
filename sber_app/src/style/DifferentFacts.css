@@ -8,7 +8,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    position: absolute;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
@@ -17,6 +17,8 @@
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
+
 
 .different_facts{
     display: flex;
@@ -85,6 +87,30 @@
 
     .different_facts {
         padding: 15px;
+    }
+}
+
+.panel { /* Теперь стили фиксированной плашки будут здесь */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px; /* Или 170px, если хотите, чтобы совпадало с отступом */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Медиа-запросы для адаптивности .panel */
+@media screen and (max-width: 768px) {
+    .panel {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .panel {
+        height: 80px;
     }
 }
 
