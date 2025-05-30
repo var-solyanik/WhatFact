@@ -74,15 +74,18 @@ function App() {
       case "character":
         // notify(event.type);
         setCharacter(event.character?.id)
+        console.log('1');
         break;
       case "sdk_answer":
         // notify(event.type);
         handleAssistantDataEventSmartAppData(event);
+        console.log('2');
         break;
 
       case "smart_app_data":
         // notify(event.type);
         handleAssistantDataEventSmartAppData(event);
+        console.log('3');
         break
 
       default:
@@ -103,6 +106,9 @@ function App() {
         case 'return_menu':
           console.log("dispatchAssistantAction: Сработал case return_menu");
           return showCategorySelection(action);
+        case 'goToGameThemes': // Это новое действие из Game.jsx
+          console.log("dispatchAssistantAction: Сработал case 'goToGameThemes'"); // <<< ДОБАВЬТЕ ЭТУ СТРОКУ
+          return showGameCategorySelection();
         case 'attemptToQuiz':
           return attemptToQuiz();
         case 'Answer':

@@ -156,7 +156,7 @@ const Game = ({res, setModalRes, assistant_global, menu, setMenu, answ, setAnsw,
     return (
         <div {...gameSection} className='game_menu'>
             <div {...returnMenuSection}>
-            <button onClick={() => assistant_global(null, "returnMenu")} className='sn-section-item menu'>Главное меню</button>
+            <button onClick={() => assistant_global(null, "returnMenuAfterGame")} className='sn-section-item menu'>Главное меню</button>
             </div>
 
             <h1 className="question-text">
