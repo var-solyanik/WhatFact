@@ -1,4 +1,4 @@
-.game_menu{
+.game_menu {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -12,80 +12,83 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
 }
 
-.game_button{
+/* Стили для кнопки возврата (как в DifferentFacts) */
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    cursor: pointer;
+    padding: 12px 20px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 12px;
+    background-color: transparent;
+    font-size: 1vw;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    z-index: 10;
+}
+
+.menu:hover {
+    background-color: white;
+    color: #6A00FF;
+    transform: translateY(-2px);
+}
+
+.game_button {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /*justify-content: space-around;*/
     gap: 20px;
-    /*height: 55vh;*/
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
 
-.btn_answ{
+.btn_answ,
+.btnMenuAfterGame,
+.check_answ,
+.check_unAnsw {
     padding: 15px 20px;
     font-size: 1.8vw;
-    margin-top: 0;
     border-radius: 12px;
     border: none;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     width: 20%;
+    margin-top: 0;
+    transition: all 0.3s ease;
 }
 
-.btnMenuAfterGame{
-    padding: 15px 20px;
-    font-size: 1.8vw;
-    margin-top: 0;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
+.btnMenuAfterGame {
     background-color: #3a0983;
     color: white;
-    font-family: 'Montserrat', sans-serif;
-    width: 20%;
 }
 
-.check_answ{
-    padding: 15px 20px;
-    font-size: 1.8vw;
-    margin-top: 0;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    width: 20%;
-    /*background: linear-gradient(180deg, #5a28ac, #a1067e); !* Градиент от тёмно-синего к ещё более тёмному *!*/
-
-}
-
-.check_unAnsw{
-    padding: 15px 20px;
-    font-size: 1.8vw;
+.check_unAnsw {
     margin-bottom: 3vh;
-    margin-top: 0;
-    border-radius: 12px;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    width: 20%;
 }
 
-.btn_nextQuest{
+.btn_nextQuest {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 .question-text {
     color: white;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5vw;
     line-height: 4.5vh;
     margin-bottom: 2vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Медиа-запросы для адаптивности */
@@ -99,9 +102,10 @@
         padding: 12px 16px;
     }
 
-    /*.game_button {*/
-    /*    height: 50vh;*/
-    /*}*/
+    .menu {
+        font-size: 1.2rem;
+        padding: 10px 16px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -114,9 +118,10 @@
         padding: 10px 14px;
     }
 
-    /*.game_button {*/
-    /*    height: 45vh;*/
-    /*}*/
+    .menu {
+        font-size: 1rem;
+        padding: 8px 14px;
+    }
 
     .question-text {
         font-size: 4.5vw;
@@ -134,9 +139,14 @@
         padding: 8px 12px;
     }
 
-    /*.game_button {*/
-    /*    height: 40vh;*/
-    /*    margin-top: 0.5vh;*/
-    /*    margin-bottom: 1vh;*/
-    /*}*/
+    .menu {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        margin-left: 0.5vw;
+        margin-top: 1vh;
+    }
+
+    .game_menu {
+        padding: 10px;
+    }
 }

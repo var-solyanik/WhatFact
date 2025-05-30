@@ -79,7 +79,6 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
 
   useEffect(() => {
     if(returnMenuState){
-      window.history.go(-1);
       setReturnMenuState(false);
     }
   }, [returnMenuState]);
