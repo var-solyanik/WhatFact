@@ -105,6 +105,9 @@ function App() {
           return chooseTheme(action);
         case 'return_menu':
           console.log("dispatchAssistantAction: Сработал case return_menu");
+          return returnMenu(action);
+        case 'return_theme':
+          console.log("dispatchAssistantAction: Сработал case return_menu");
           return showCategorySelection(action);
         case 'goToGameThemes': // Это новое действие из Game.jsx
           console.log("dispatchAssistantAction: Сработал case 'goToGameThemes'"); // <<< ДОБАВЬТЕ ЭТУ СТРОКУ
@@ -124,6 +127,9 @@ function App() {
           return closeModalFact();
         case 'showRes':
           return showRes();
+        case 'ThemeAfterGame':
+          console.log("dispatchAssistantAction: Сработал case themeaftergame");
+          return ThemeAfterGame(action);
         default:
           throw new Error();
       }
@@ -132,6 +138,11 @@ function App() {
 
   function showRes(){
     setModalRes(true);
+  }
+
+  function returnMenu(action){
+    setMenu(true);  
+    navigate('/');   
   }
 
   function closeModalFact(){
@@ -158,8 +169,16 @@ function App() {
     setModalState(false);      // Закрыть модалку фактов
     setStateModalQuiz(false);  // Закрыть модалку квиза
     setModalRes(false);        // Закрыть модалку результатов квиза
-    setStateModalQuiz(true);   // Открыть модалку выбора категорий квиза
+    setMenu(true);  
     navigate('/');   
+  }
+
+  function ThemeAfterGame(action){
+    setModalState(false);      // Закрыть модалку фактов
+    setStateModalQuiz(false);  // Закрыть модалку квиза
+    setModalRes(false);        // Закрыть модалку результатов квиза
+    setStateModalQuiz(true);   // Открыть модалку выбора категорий квиза
+    navigate('/');     
   }
 
   function NextQuest(action){

@@ -1,13 +1,7 @@
 .game_menu {
     width: 100%;
     height: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: transparent;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -15,6 +9,7 @@
     padding: 20px;
     box-sizing: border-box;
     position: relative;
+    min-height: 100vh;
 }
 
 /* Стили для кнопки возврата (как в DifferentFacts) */
@@ -38,6 +33,31 @@
 }
 
 .menu:hover {
+    background-color: white;
+    color: #6A00FF;
+    transform: translateY(-2px);
+}
+
+/* Стили для кнопки меню в правом верхнем углу */
+.menu_right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 12px 20px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 12px;
+    background-color: transparent;
+    font-size: 1vw;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    z-index: 10;
+}
+
+.menu_right:hover {
     background-color: white;
     color: #6A00FF;
     transform: translateY(-2px);
@@ -85,8 +105,8 @@
 .question-text {
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.5vw;
-    line-height: 4.5vh;
+    font-size: 2rem;
+    line-height: 2.4rem;
     margin-bottom: 2vh;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -102,7 +122,8 @@
         padding: 12px 16px;
     }
 
-    .menu {
+    .menu,
+    .menu_right {
         font-size: 1.2rem;
         padding: 10px 16px;
     }
@@ -118,14 +139,22 @@
         padding: 10px 14px;
     }
 
-    .menu {
+    .menu,
+    .menu_right {
         font-size: 1rem;
         padding: 8px 14px;
     }
 
     .question-text {
-        font-size: 4.5vw;
-        line-height: 5.5vh;
+        margin-top: 2rem;
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+
+    .game_menu {
+        height: auto;
+        min-height: 120vh;
+        overflow-y: scroll;
     }
 }
 
@@ -139,14 +168,24 @@
         padding: 8px 12px;
     }
 
-    .menu {
+    .menu,
+    .menu_right {
         font-size: 0.9rem;
         padding: 6px 12px;
-        margin-left: 0.5vw;
-        margin-top: 1vh;
+        /* margin-top: 1vh; */
+    }
+
+    .menu {
+        /* margin-left: 0.5vw; */
+    }
+
+    .menu_right {
+        /* margin-right: 0.5vw; */
     }
 
     .game_menu {
-        padding: 10px;
+        height: auto;
+        min-height: 120vh;
+        overflow-y: scroll;
     }
 }

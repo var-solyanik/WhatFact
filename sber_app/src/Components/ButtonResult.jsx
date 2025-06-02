@@ -63,7 +63,7 @@ const ButtonResult = ({state_btnMenu, setModalRes, res, correctAnswers, handleCl
                 <h1 style={{display:'block', fontFamily: 'Montserrat'}}>
                   {correctAnswers + " из " + 10}
                 </h1>
-                <button className='sn-section-item btnMenuAfterGame' tabIndex={-1} onClick={() => handleClick(null, "returnMenuAfterGame")}>Главное меню</button>
+                <button className='sn-section-item btnMenuAfterGame' tabIndex={-1} onClick={() => handleClick(null, "returnMenuAfterGame")}>Меню</button>
               </div>
             </ModalWindow>
         </div>

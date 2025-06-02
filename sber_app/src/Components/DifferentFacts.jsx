@@ -83,10 +83,15 @@ const DifferentFacts = ({assistant_global, scale, setScale, returnMenuState, set
     }
   }, [returnMenuState]);
 
+  const handleMenuClick = () => {
+    router('/');
+  };
+
   return (
     <div {...menuFocus} className='sn-section-root page_facts'>
       <div {...returnMenu}>
-        <button id='0' onClick={() => assistant_global(null, "returnMenu")} className='sn-section-item menu'>Главное меню</button>
+        <button id='0' onClick={() => assistant_global(null, "returnTheme")} className='sn-section-item menu'>Темы</button>
+        <button id='0' onClick={() => assistant_global(null, "returnMenu")} className='sn-section-item menu_right'>Меню</button>
       </div>
       <div className="different_facts">
         <h1 className='name_facts'>

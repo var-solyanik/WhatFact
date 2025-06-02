@@ -153,10 +153,15 @@ const Game = ({res, setModalRes, assistant_global, menu, setMenu, answ, setAnsw,
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, []); // Пустой массив зависимостей, чтобы обработчик вешался один раз
 
+    const handleMenuClick = () => {
+        navigate('/');
+    };
+
     return (
         <div {...gameSection} className='game_menu'>
             <div {...returnMenuSection}>
-            <button onClick={() => assistant_global(null, "returnMenuAfterGame")} className='sn-section-item menu'>Главное меню</button>
+                <button onClick={() => assistant_global(null, "returnThemeAfterGame")} className='sn-section-item menu'>Темы</button>
+                <button onClick={() => assistant_global(null, "returnMenuAfterGame")}  className='sn-section-item menu_right'>Меню</button>
             </div>
 
             <h1 className="question-text">
